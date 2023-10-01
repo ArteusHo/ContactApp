@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddFragment">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVert1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".15" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVert2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVert3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".25" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".40" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHor3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".55" />
+
+
+    <Button
+        android:id="@+id/BtnPfp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:text="PFP"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHor1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert1" />
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Name"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHor1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert1" />
+    <TextView
+        android:id="@+id/txtPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Phone no"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHor2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert1" />
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Email"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHor3"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert1" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHor1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert2" />
+    <EditText
+        android:id="@+id/editPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHor2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert2" />
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHor3"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert2" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="ADD FRAGMENT" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:text="Back"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="5dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineVert1"/>
+    <Button
+        android:id="@+id/btnSave"
+        android:text="Save"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="5dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="@id/guidelineVert3"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
