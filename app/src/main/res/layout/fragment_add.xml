@@ -8,114 +8,153 @@
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineVert1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/topguide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".10" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/botguide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftguide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent=".15" />
+
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineVert2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".5" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineVert3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/rightguide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent=".85" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineHor1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".25" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineHor2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".40" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineHor3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".55" />
 
 
-    <Button
-        android:id="@+id/BtnPfp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
-        android:text="PFP"
-        android:textSize="30sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineHor1"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineVert3"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVert1" />
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/screen"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="Name"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/guidelineHor1"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVert1" />
-    <TextView
-        android:id="@+id/txtPhone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="Phone no"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/guidelineHor2"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVert1" />
-    <TextView
-        android:id="@+id/txtEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="Email"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/guidelineHor3"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVert1" />
+        android:foregroundGravity="center"
+        app:layout_constraintTop_toTopOf="@id/topguide"
+        app:layout_constraintLeft_toLeftOf="@id/leftguide"
+        app:layout_constraintBottom_toBottomOf="@id/botguide"
+        app:layout_constraintRight_toRightOf="@id/rightguide">
 
-    <EditText
-        android:id="@+id/editName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/guidelineHor1"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineVert3"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVert2" />
-    <EditText
-        android:id="@+id/editPhone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/guidelineHor2"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineVert3"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVert2" />
-    <EditText
-        android:id="@+id/editEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/guidelineHor3"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineVert3"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVert2" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/format"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            app:layout_constraintLeft_toLeftOf="@id/screen"
+            app:layout_constraintRight_toRightOf="@id/screen"
+            app:layout_constraintTop_toTopOf="@id/screen"
+            app:layout_constraintBottom_toBottomOf="@id/screen"
+            android:orientation="vertical">
+
+
+            <ImageButton
+                android:id="@+id/profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:maxWidth="150dp"
+                android:maxHeight="150dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/avatar1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="firstname"/>
+
+                <EditText
+                    android:id="@+id/firstname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="firstname here" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="lastname" />
+
+                <EditText
+                    android:id="@+id/lastname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="lastname here" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="number" />
+
+                <EditText
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="number here" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="number" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="email here" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <TextView
@@ -132,7 +171,7 @@
         android:layout_marginStart="5dp"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@id/guidelineVert1"/>
+        app:layout_constraintLeft_toLeftOf="@id/leftguide"/>
     <Button
         android:id="@+id/btnSave"
         android:text="Save"
@@ -142,5 +181,5 @@
         android:layout_marginStart="5dp"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="@id/guidelineVert3"/>
+        app:layout_constraintRight_toRightOf="@id/rightguide"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
