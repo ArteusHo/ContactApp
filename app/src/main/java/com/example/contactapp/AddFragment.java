@@ -48,6 +48,10 @@ public class AddFragment extends Fragment {
 
     EditText number;
 
+    Button btnSave;
+
+    Button btnBack;
+
     private String mParam1;
     private String mParam2;
 
@@ -69,7 +73,16 @@ public class AddFragment extends Fragment {
         // Initialize btnProfile here
         btnProfile = view.findViewById(R.id.profile);
         number = view.findViewById(R.id.number);
-        Button btnBack = view.findViewById(R.id.btnBack);
+        btnSave = view.findViewById(R.id.btnSave);
+        btnBack = view.findViewById(R.id.btnBack);
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,7 +122,7 @@ public class AddFragment extends Fragment {
         File pfpstorage = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 
         String userpfp = number.getText().toString();
-        String fileName = "IMG " + "AAAAAAAAA" + ".jpg";
+        String fileName = "IMG " + userpfp + ".jpg";
 
         File imageFile = new File(pfpstorage, fileName);
 
