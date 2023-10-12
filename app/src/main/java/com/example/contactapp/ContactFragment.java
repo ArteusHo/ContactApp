@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,6 +70,12 @@ public class ContactFragment extends Fragment {
             @Override
             public void onClick(View view) {menuDataViewModel.setOption(2);}
         });
+
+
+        RecyclerView recycview = (RecyclerView) view.findViewById(R.id.recView);
+        recycview.setLayoutManager(new GridLayoutManager(getActivity(), GridLayoutManager.VERTICAL, GridLayoutManager.HORIZONTAL, false));
+
+
 
         return view;
     }

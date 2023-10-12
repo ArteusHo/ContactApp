@@ -8,12 +8,15 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     AddFragment addFragment=new AddFragment();
     ContactFragment contactFragment=new ContactFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
