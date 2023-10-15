@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
@@ -12,7 +13,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     AddFragment addFragment=new AddFragment();
-    ContactFragment contactFragment=new ContactFragment();
+    ContactFragment contactFragment= new ContactFragment();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -122,7 +122,7 @@ public class ContactFragment extends Fragment {
                     contactList.add(person);
                     contactList = personDAO.getAllContacts();
                     //contactAdapter = new Adapter(contactList, menuData);
-                    recyclerViewContacts.setAdapter(contactAdapter);
+                    recycview.setAdapter(contactAdapter);
                     contactAdapter.notifyDataSetChanged();
 
                 }
