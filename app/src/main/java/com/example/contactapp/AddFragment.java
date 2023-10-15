@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -33,6 +34,7 @@ import androidx.lifecycle.ViewModelProvider;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 
 public class AddFragment extends Fragment {
@@ -42,6 +44,8 @@ public class AddFragment extends Fragment {
     private static final int REQUEST_CAMERA_PERMISSION_CODE = 1;
     private static final int REQUEST_IMAGE_CAPTURE = 2;
 
+    private String fileName;
+    private File pfp;
     ActivityResultLauncher<Intent> activityResultLauncher;
     private String currentPhotoPath;
     ImageView btnProfile;  // Declare btnProfile as a class variable
@@ -51,6 +55,7 @@ public class AddFragment extends Fragment {
     Button btnSave;
 
     Button btnBack;
+
 
     private String mParam1;
     private String mParam2;
@@ -75,11 +80,26 @@ public class AddFragment extends Fragment {
         number = view.findViewById(R.id.number);
         btnSave = view.findViewById(R.id.btnSave);
         btnBack = view.findViewById(R.id.btnBack);
+        EditText firstname = view.findViewById(R.id.firstname);
+        EditText lastname = view.findViewById(R.id.lastname);
+        EditText email = view.findViewById(R.id.email);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+                String first_name = firstname.getText().toString();
+                String last_name = lastname.getText().toString();
+                String name = first_name+last_name;
+                String phone_number = number.getText().toString();
+                String user_email = email.getText().toString();
+
+
+                PersonClass person = new PersonClass(name, phone_number, user_email, "/document/primary:picture/"+fileName);
+                menuDataViewModel.setOption(1);
+
+
+
 
             }
         });
@@ -87,7 +107,7 @@ public class AddFragment extends Fragment {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Handle the back button click if needed
+                menuDataViewModel.setOption(1);
             }
         });
 
@@ -122,7 +142,7 @@ public class AddFragment extends Fragment {
         File pfpstorage = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 
         String userpfp = number.getText().toString();
-        String fileName = "IMG " + userpfp + ".jpg";
+        fileName = "IMG " + userpfp + ".jpg";
 
         File imageFile = new File(pfpstorage, fileName);
 
@@ -137,7 +157,7 @@ public class AddFragment extends Fragment {
 
             // Use sendBroadcast(Intent, String) with a permission string
             requireContext().sendBroadcast(mediaScannerIntent, "your.custom.permission");
-            Toast.makeText(requireContext(), "photo saved :)", Toast.LENGTH_LONG).show();
+            Toast.makeText(requireContext(), "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", Toast.LENGTH_LONG).show();
 
 
 
@@ -160,6 +180,24 @@ public class AddFragment extends Fragment {
             activityResultLauncher.launch(intent);
         }
     }
+    class MyFilenameFilter implements FilenameFilter {
+
+        String initials;
+
+        // constructor to initialize object
+        public MyFilenameFilter(String initials)
+        {
+            this.initials = initials;
+        }
+
+        // overriding the accept method of FilenameFilter
+        // interface
+        public boolean accept(File dir, String name)
+        {
+            return name.startsWith(initials);
+        }
+    }
+
 
     // ... (other methods)
 

@@ -3,6 +3,9 @@ package com.example.contactapp;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import java.io.File;
+
 @Entity(tableName="PersonTable")
 public class PersonClass {
     @PrimaryKey(autoGenerate = true)
@@ -14,20 +17,18 @@ public class PersonClass {
     @ColumnInfo(name = "Email")
     String email;
     @ColumnInfo(name = "Pfp")
-    int pfp;
+    String pfp;
 
     public PersonClass()
     {
-        id=0;
         name="";
         phone="";
         email="";
-        pfp=0;
+        File pfp;
     }
 
-    public PersonClass(int pid,String pname,String pphone, String pemail,int ppfp)
+    public PersonClass(String pname,String pphone, String pemail,String ppfp)
     {
-        id=pid;
         name=pname;
         phone=pphone;
         email=pemail;
