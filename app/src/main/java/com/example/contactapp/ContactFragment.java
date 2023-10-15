@@ -45,11 +45,10 @@ public class ContactFragment extends Fragment {
     List<PersonClass> personList;
     int contactId;
     private MenuData menuData;
-    private RecyclerView recyclerViewContacts;
+    private RecyclerView recycview;
     private Adapter contactAdapter;
     private List<PersonClass> contactList;
     private static final int REQUEST_READ_CONTACT_PERMISSION = 3;
-
     PersonDAO personDAO;
 
     ActivityResultLauncher<Intent> pickContactLauncher = registerForActivityResult(
@@ -118,7 +117,7 @@ public class ContactFragment extends Fragment {
                     } finally {
                         cphone.close();
                     }
-                    PersonClass person = new PersonClass(contactName, phoneNumber, emailAddress, 0);
+                    PersonClass person = new PersonClass(contactName, phoneNumber, emailAddress, null);
                     personDAO.insert(person);
                     contactList.add(person);
                     contactList = personDAO.getAllContacts();
@@ -155,8 +154,12 @@ public class ContactFragment extends Fragment {
         btnImport = view.findViewById(R.id.btnImport);
         txtTest=view.findViewById(R.id.txtTest);
         RecyclerView recycview = (RecyclerView) view.findViewById(R.id.recView);
-        recycview.setLayoutManager(new GridLayoutManager(getActivity(), GridLayoutManager.VERTICAL, GridLayoutManager.HORIZONTAL, false));
 
+        personDAO = DBInstance.getDatabase(getActivity().getApplicationContext()).personDAO();
+        contactList = personDAO.getAllContacts();
+        contactAdapter = new Adapter(contactList);
+        recycview.setLayoutManager(new GridLayoutManager(getActivity(), GridLayoutManager.VERTICAL, GridLayoutManager.HORIZONTAL, false));
+        recycview.setAdapter(contactAdapter);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {menuDataViewModel.setOption(2);}
@@ -166,7 +169,7 @@ public class ContactFragment extends Fragment {
             @Override
             public void onClick(View view)
             {
-                import2();
+
             }
         });
 
@@ -227,6 +230,19 @@ public class ContactFragment extends Fragment {
         txtTest.setText("ff");
     }
 
+    private void onPickContactButtonClick(View view) {
+        ActivityCompat.requestPermissions(requireActivity(),
+                new String[]{Manifest.permission.READ_CONTACTS},
+                REQUEST_READ_CONTACT_PERMISSION);
+        pickContact();
+    }
+
+    private void pickContact() {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_PICK);
+        intent.setData(ContactsContract.Contacts.CONTENT_URI);
+        pickContactLauncher.launch(intent);
+    }
 
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String[] permissions,
