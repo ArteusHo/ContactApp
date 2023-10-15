@@ -137,7 +137,7 @@ public class AddFragment extends Fragment {
 
             // Use sendBroadcast(Intent, String) with a permission string
             requireContext().sendBroadcast(mediaScannerIntent, "your.custom.permission");
-            Toast.makeText(requireContext(), "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", Toast.LENGTH_LONG).show();
+            Toast.makeText(requireContext(), "photo saved :)", Toast.LENGTH_LONG).show();
 
 
 
