@@ -1,5 +1,6 @@
 package com.example.contactapp;
 
+import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -91,7 +92,10 @@ public class ContactFragment extends Fragment {
 
         btnImport.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {test();}
+            public void onClick(View view) {
+                //txtTest.setText("ff");
+                testf();
+            }
         });
 
         return view;
@@ -132,9 +136,9 @@ public class ContactFragment extends Fragment {
                 while(cursor.moveToNext())
                 {
                     PersonClass contact=new PersonClass();
-                    //String name=cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-                    this.id=cursor.getInt(0);
-                    String name=cursor.getString(1);
+                    @SuppressLint("Range") String name=cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+                    //this.id=cursor.getInt(0);
+                    //String name=cursor.getString(1);
                     txtTest.setText(name);
                 }
             }
@@ -145,7 +149,7 @@ public class ContactFragment extends Fragment {
         cursor.close();
     }
 
-    public void test()
+    public void testf()
     {
         txtTest.setText("ff");
     }
