@@ -18,16 +18,14 @@ public class PersonClass {
 
     public PersonClass()
     {
-        id=0;
         name="";
         phone="";
         email="";
         pfp=0;
     }
 
-    public PersonClass(int pid,String pname,String pphone, String pemail,int ppfp)
+    public PersonClass(String pname,String pphone, String pemail,int ppfp)
     {
-        id=pid;
         name=pname;
         phone=pphone;
         email=pemail;
