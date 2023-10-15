@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,9 +34,8 @@ import java.util.List;
 import androidx.lifecycle.ViewModelProvider;
 
 
-
-
 public class ContactFragment extends Fragment {
+
 
 
 
@@ -128,8 +128,15 @@ public class ContactFragment extends Fragment {
                 }
             });
 
+
+    int id;
+    Button btnAdd;
+    Button btnImport;
+    TextView txtTest;
+
+
     public ContactFragment() {
-        // Required empty public constructor
+
     }
 
     public static ContactFragment newInstance(String param1, String param2) {
@@ -167,6 +174,7 @@ public class ContactFragment extends Fragment {
 
         btnImport.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View view)
             {
 
