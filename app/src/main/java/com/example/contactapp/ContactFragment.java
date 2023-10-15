@@ -36,9 +36,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 public class ContactFragment extends Fragment {
 
-
-
-
     Button btnAdd;
     Button btnImport;
     TextView txtTest;
@@ -121,19 +118,13 @@ public class ContactFragment extends Fragment {
                     personDAO.insert(person);
                     contactList.add(person);
                     contactList = personDAO.getAllContacts();
-                    //contactAdapter = new Adapter(contactList, menuData);
+                    recycview.setAdapter(contactAdapter);
+                    contactAdapter = new Adapter(contactList);
                     recycview.setAdapter(contactAdapter);
                     contactAdapter.notifyDataSetChanged();
 
                 }
             });
-
-
-    int id;
-    Button btnAdd;
-    Button btnImport;
-    TextView txtTest;
-
 
     public ContactFragment() {
 

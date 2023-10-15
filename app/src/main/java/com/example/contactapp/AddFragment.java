@@ -55,7 +55,7 @@ public class AddFragment extends Fragment {
     Button btnSave;
 
     Button btnBack;
-
+    PersonDAO personDAO;
 
     private String mParam1;
     private String mParam2;
@@ -67,6 +67,7 @@ public class AddFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        PersonDAO personDAO = DBInstance.getDatabase(getActivity().getApplicationContext()).personDAO();
     }
 
     @Override
@@ -96,6 +97,8 @@ public class AddFragment extends Fragment {
 
 
                 PersonClass person = new PersonClass(name, phone_number, user_email, "/document/primary:picture/"+fileName);
+                personDAO.insert(person);
+
                 menuDataViewModel.setOption(1);
 
 
