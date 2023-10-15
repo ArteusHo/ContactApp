@@ -5,6 +5,10 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class MenuData extends ViewModel {
+
+    // this is the sizing for the recycler view
+    public static final int WIDTH = 30;
+    public static final int HEIGHT = 10;
     public MutableLiveData<Integer> option;
     public MenuData(){
         option = new MediatorLiveData<Integer>();
